@@ -170,10 +170,10 @@
                         }
                     } ?>
 
-
+	            <?php get_sidebar(); ?>
                 </div><!-- .postcontent end -->
 
-                <?php get_sidebar(); ?>
+
 
             </div>
 
