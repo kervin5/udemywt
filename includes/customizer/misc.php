@@ -3,11 +3,13 @@
 function ju_misc_customizer_section(WP_Customize_Manager $wp_customize){
 	//Establish database values
 	$wp_customize->add_setting('ju_header_show_search',array(
-		'default'   => 'yes'
+		'default'   => 'yes',
+		'transport' => 'postMessage'
 	));
 
 	$wp_customize->add_setting('ju_header_show_cart',array(
-		'default'   => 'yes'
+		'default'   => 'yes',
+		'transport' => 'postMessage'
 	));
 
 	$wp_customize->add_setting('ju_footer_copyright_text',array(
@@ -25,7 +27,8 @@ function ju_misc_customizer_section(WP_Customize_Manager $wp_customize){
 	//Section to hold the controls on the frontend
 	$wp_customize->add_section('ju_misc_section',array(
 		'title' => __('Udemy Misc Settings', 'udemy'),
-		'priority'  => 30
+		'priority'  => 30,
+		'panel'     => 'udemy'
 	));
 
 	//Actual frontend control

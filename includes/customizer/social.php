@@ -23,7 +23,8 @@ function ju_social_customizer_section(WP_Customize_Manager $wp_customize){
 
 	$wp_customize->add_section('ju_social_section',[
 		'title'     =>  __('Udemy Social Settings','udemy'),
-		'priority'  =>  30
+		'priority'  =>  30,
+		'panel'     =>  'udemy'
 	]);
 
 	$wp_customize->add_control(
