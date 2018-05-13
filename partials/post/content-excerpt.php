@@ -1,12 +1,70 @@
 <div class="entry clearfix">
+    <?php if(get_post_format() == 'gallery') :?>
+        <?php
+            $gallery = get_post_gallery(get_the_ID(),false);
+        ?>
+        <div class="entry-image">
+            <div class="fslider" data-arrows="false" data-lightbox="gallery">
+                <div class="flexslider">
+                    <div class="slider-wrap">
+                        <?php foreach ( $gallery['src'] as $src ) :?>
+                            <div class="slide">
+                                <a href="<?php echo $src;?>" data-lightbox="gallery-item">
+                                    <img class="image_fade" src="<?php echo $src;?>">
+                                </a>
+                            </div>
+                        <?php endforeach;?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <?php elseif (get_post_format() == 'video'):?>
+        <?php
+            $content = apply_filters('the_content',get_the_content());
+            $video = false;
 
-	<?php if(has_post_thumbnail())  {?>
+            if(!strpos($content,'wp-playlist-script')){
+                $video = get_media_embedded_in_content(
+                        $content,
+                        array('video','object','embed','iframe')
+                );
+            }
+
+            if($video){
+                echo '<div class="entry-video">';
+                echo $video[0];
+                echo '</div>';
+            }
+        ?>
+    <?php elseif (get_post_format() == 'audio'):?>
+	    <?php
+	    $content = apply_filters('the_content',get_the_content());
+	    $audio = false;
+
+	    if(!strpos($content,'wp-playlist-script')){
+		    $audio = get_media_embedded_in_content(
+			    $content,
+			    array('audio','iframe')
+		    );
+	    }
+
+	    if($audio){
+		    echo $audio[0];
+
+	    }
+	    ?>
+
+        <div class="entry-image">
+
+        </div>
+	<?php elseif(has_post_thumbnail())  :?>
+
 		<div class="entry-image">
 			<a href="<?php the_permalink(); ?>" data-lightbox="image">
 				<?php the_post_thumbnail('full',['class' => 'image_fade']); ?>
 			</a>
 		</div>
-	<?php } ?>
+	<?php endif; ?>
 
 	<div class="entry-title">
 		<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
