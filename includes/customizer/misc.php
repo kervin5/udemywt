@@ -24,6 +24,14 @@ function ju_misc_customizer_section(WP_Customize_Manager $wp_customize){
 		'default'   => 0
 	));
 
+	$wp_customize->add_setting('ju_show_header_popular_posts_widget',array(
+		'default'   => false
+	));
+
+	$wp_customize->add_setting('ju_popular_posts_widget_title',array(
+		'default'   => 'Breaking News'
+	));
+
 	//Section to hold the controls on the frontend
 	$wp_customize->add_section('ju_misc_section',array(
 		'title' => __('Udemy Misc Settings', 'udemy'),
@@ -89,6 +97,30 @@ function ju_misc_customizer_section(WP_Customize_Manager $wp_customize){
 			'section'   =>'ju_misc_section',
 			'settings'  =>'ju_footer_privacy_policy_page',
 			'type'      => 'dropdown-pages',
+		)
+	));
+
+	$wp_customize->add_control(new WP_Customize_Control(
+		$wp_customize,
+		'ju_show_header_popular_posts_widget_input',
+		array(
+			'label'     => __('Show Popular Posts','udemy'),
+			'section'   =>'ju_misc_section',
+			'settings'  =>'ju_show_header_popular_posts_widget',
+			'type'      => 'checkbox',
+			'choices'   => array(
+				'yes'   =>  __('Yes','udemy')
+			)
+		)
+	));
+
+	$wp_customize->add_control(new WP_Customize_Control(
+		$wp_customize,
+		'ju_popular_posts_widget_title_input',
+		array(
+			'label'     => __('Popular Posts Title','udemy'),
+			'section'   =>'ju_misc_section',
+			'settings'  =>'ju_popular_posts_widget_title',
 		)
 	));
 
