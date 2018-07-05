@@ -1,4 +1,6 @@
-<?php get_header();
+<?php
+
+get_header();
 
 while ( have_posts() ) {
 	the_post();
