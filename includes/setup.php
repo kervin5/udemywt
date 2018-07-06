@@ -8,6 +8,8 @@ function ju_setup_theme(){
 //enable different post formats
 	add_theme_support('post-formats',array('aside','gallery','link','image','quote','video','audio'));
 
+	add_theme_support('woocommerce');
+
 
 //	add_theme_support('starter-content',$starter_content);
 //    add_theme_support('menus'); not required in newer versions of wordpress
