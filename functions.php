@@ -24,4 +24,5 @@ add_action('customize_register','ju_customize_register');
 add_action('customize_preview_init','ju_customize_preview_init');
 add_filter('bp_before_xprofile_cover_image_settings_parse_args','ju_xprofile_cover_image');
 add_action('bp_setup_nav','ju_buddypress_profile_tabs');
+remove_action('woocommerce_sidebar','woocommerce_get_sidebar',10);
 //Shortcodes
