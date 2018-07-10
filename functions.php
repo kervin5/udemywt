@@ -16,6 +16,7 @@ include (get_template_directory().'/includes/buddypress/profile-tabs.php');
 include (get_template_directory().'/includes/buddypress/profile-post.php');
 include (get_template_directory().'/includes/functions.php');
 include (get_template_directory().'/includes/woocommerce/checkout-fields.php');
+include(get_template_directory().'/includes/mobile.php');
 
 //Hooks
 add_action('wp_enqueue_scripts','ju_enqueue');
@@ -29,4 +30,6 @@ remove_action('woocommerce_sidebar','woocommerce_get_sidebar',10);
 add_filter('woocommerce_billing_fields','ju_wc_billing_fields');
 add_filter('woocommerce_shipping_fields','ju_wc_shipping_fields');
 remove_action('woocommerce_before_shop_loop','woocommerce_catalog_ordering',30);
+add_filter('excerpt_more','__return_false');
+add_filter('excerpt_length','ju_excerpt_length',999);
 //Shortcodes
