@@ -19,6 +19,7 @@ include (get_template_directory().'/includes/woocommerce/checkout-fields.php');
 include(get_template_directory().'/includes/mobile.php');
 include (get_template_directory().'/includes/admin/author-fields.php');
 include (get_template_directory().'/includes/avatar.php');
+include (get_template_directory().'/includes/home-query.php');
 
 //Hooks
 add_action('wp_enqueue_scripts','ju_enqueue');
@@ -39,4 +40,5 @@ add_action('edit_user_profile','ju_custom_user_profile_fields');
 add_action('personal_options_update','ju_save_extra_profile_fields');
 add_action('edit_user_profile_update','ju_save_extra_profile_fields');
 add_filter('avatar_defaults','ju_new_avatar');
+add_action('pre_get_posts','ju_modify_homepage_query');
 //Shortcodes
