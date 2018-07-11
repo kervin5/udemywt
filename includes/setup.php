@@ -10,6 +10,9 @@ function ju_setup_theme(){
 
 	add_theme_support('woocommerce');
 
+	//Image sizes
+add_image_size('ju-post-image',860,575,false);
+
 
 //	add_theme_support('starter-content',$starter_content);
 //    add_theme_support('menus'); not required in newer versions of wordpress

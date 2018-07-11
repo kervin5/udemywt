@@ -132,7 +132,7 @@
                                                 <div class="mpost clearfix">
                                                     <?php if(has_post_thumbnail()) : ?>
                                                         <div class="entry-image">
-                                                            <a href="<?php the_permalink() ;?>"> <?php the_post_thumbnail('thumbnail');?> </a>
+                                                            <a href="<?php the_permalink() ;?>"> <?php the_post_thumbnail('ju-post-image');?> </a>
                                                         </div>
                                                     <?php endif;?>
 
