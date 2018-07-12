@@ -1,4 +1,10 @@
 <?php get_header(); ?>
+
+<?php
+//Debugin global variables including queries
+//global $wp_filter,$wpdb;
+//var_dump($wp_filter);
+?>
     <!-- Content
     ============================================= -->
     <section id="content">
