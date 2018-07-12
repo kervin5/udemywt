@@ -13,7 +13,7 @@
 
 </head>
 
-<body <?php body_class('no-transition stretched') ?> >
+<body <?php body_class('no-transition stretched') ?> itemscope itemtype="https://schema.org/WebPage">
 
 <!-- Document Wrapper
 ============================================= -->

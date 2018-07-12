@@ -91,9 +91,9 @@
 
                                     <!-- Post Author Info
                                     ============================================= -->
-                                    <div class="panel panel-default">
+                                    <div class="panel panel-default" itemscope itemtype="https://schema.org/Person">
                                         <div class="panel-heading">
-                                            <h3 class="panel-title">Posted by <span><a href="<?php echo $author_url; ?>"><?php the_author(); ?></a></span></h3>
+                                            <h3 class="panel-title">Posted by <span itemprop="name"><a href="<?php echo $author_url; ?>"><?php the_author(); ?></a></span></h3>
                                         </div>
                                         <div class="panel-body">
                                             <div class="author-image">
