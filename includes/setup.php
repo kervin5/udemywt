@@ -23,4 +23,7 @@ add_image_size('ju-post-image',860,575,false);
 	if (function_exists('quads_register_ad')){
 		quads_register_ad( array('location' => 'udemy_header', 'description' => 'Udemy Header position') );
 	}
+
+	if ( ! isset( $content_width ) ) $content_width = 1200;
+	
 }
