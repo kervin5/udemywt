@@ -25,5 +25,5 @@ add_image_size('ju-post-image',860,575,false);
 	}
 
 	if ( ! isset( $content_width ) ) $content_width = 1200;
-	
+
 }
